@@ -67,7 +67,7 @@ mvn fs-extractor:fs-extract
 
 As mentioned above, you could now deploy the downloaded/extracted files to your own repository:
 
-```
+```xml
 ...
     <build>
     
