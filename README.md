@@ -1,5 +1,17 @@
 # Maven plugin for downloading/extracting FirstSpirit libraries for a specific version
 
+## Warning
+
+The plugin access the FirstSpirit download area of e-spirit.de, by default at:
+http://www.e-spirit.de/download/firstspirit
+
+You provide your username and password. You access the download area as a legitimate e-spirit user.
+
+This plugin was written for internal use at itelligence.de GmbH to make development of FirstSpirit modules easier.
+It is being shared by request.
+
+There are probably bugs.
+
 ## Basic info
 
 This is a simple Maven plugin for downloading extracting the following libraries for a specific version:
