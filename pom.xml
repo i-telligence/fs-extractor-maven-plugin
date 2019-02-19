@@ -10,36 +10,23 @@
     
 
     <properties>
-        <mavenVersion>3.5.2</mavenVersion>
+    
+        <maven.version>3.5.2</maven.version>
+        <maven-plugin-annotations.version>3.2</maven-plugin-annotations.version>
+        <maven-compat.version>3.2.1</maven-compat.version>
+        <maven-plugin-testing-harness.version>3.1.0</maven-plugin-testing-harness.version>
+        
+        <httpcore.version>4.4.6</httpcore.version>
+        <httpclient.version>4.5.3</httpclient.version>
+        
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        
         <skip.unit.tests>true</skip.unit.tests>
+        
     </properties>
-
-
-    <distributionManagement>
-        <repository>
-            <id>archiva.internal</id>
-            <url>${archiva.url}/repository/internal</url>
-        </repository>
-        <snapshotRepository>
-            <id>archiva.snapshots</id>
-            <url>${archiva.url}/repository/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
-    
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>de.itelligence.agv</groupId>
-                <artifactId>bom</artifactId>
-                <version>0.0.1-RELEASE</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <dependencies>
     
@@ -47,47 +34,54 @@
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-plugin-api</artifactId>
-            <version>${mavenVersion}</version>
+            <version>${maven.version}</version>
         </dependency>
         
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-core</artifactId>
-            <version>${mavenVersion}</version>
+            <version>${maven.version}</version>
         </dependency>
         
         <dependency>
             <groupId>org.apache.maven.plugin-tools</groupId>
             <artifactId>maven-plugin-annotations</artifactId>
-            <version>3.2</version>
+            <version>${maven-plugin-annotations.version}</version>
             <scope>provided</scope>
         </dependency>
         
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-compat</artifactId>
-            <version>3.2.1</version>
+            <version>${maven-compat.version}</version>
             <scope>test</scope>
         </dependency>
         
         <dependency>
             <groupId>org.apache.maven.plugin-testing</groupId>
             <artifactId>maven-plugin-testing-harness</artifactId>
-            <version>3.1.0</version>
+            <version>${maven-plugin-testing-harness.version}</version>
             <scope>test</scope>
         </dependency>
         
+        
+        <!-- Dependencies for mojo -->
         <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpcore -->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpcore</artifactId>
+            <version>${httpcore.version}</version>
         </dependency>
+        
         <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
+            <version>${httpclient.version}</version>
         </dependency>
         
+        
+        <!-- Dependencies for testing -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
