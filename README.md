@@ -228,3 +228,10 @@ As mentioned above, you could now deploy the downloaded/extracted files to your 
 </project>
 
 ```
+
+## Contribution / Roadmap
+
+We're not sure yet! But we are open to suggestions.
+Perhaps publish to maven central?
+
+
