@@ -60,7 +60,8 @@ The configuration below is an example only.
 </project>
 ```
 
+To run:
 ```
-mvn fs-extract
+mvn fs-extractor:fs-extract
 ```
 
