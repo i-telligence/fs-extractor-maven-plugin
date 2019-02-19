@@ -95,7 +95,7 @@ As mentioned above, you could now deploy the downloaded/extracted files to your 
                     </goals>
                     <configuration>
                         <file>${basedir}/target/debug/fs-client.jar</file>
-                        <repositoryId>archiva.internal</repositoryId>
+                        <repositoryId>${your.repo.id}</repositoryId>
                         <url>${your.repo.url}</url>
                         <artifactId>client</artifactId>
                         <groupId>de.espirit.firstspirit</groupId>
@@ -110,7 +110,7 @@ As mentioned above, you could now deploy the downloaded/extracted files to your 
                     </goals>
                     <configuration>
                         <file>${basedir}/target/misc/fs-access.jar</file>
-                        <repositoryId>archiva.internal</repositoryId>
+                        <repositoryId>${your.repo.id}</repositoryId>
                         <url>${your.repo.url}</url>
                         <artifactId>fs-access</artifactId>
                         <groupId>de.espirit.firstspirit</groupId>
@@ -125,11 +125,11 @@ As mentioned above, you could now deploy the downloaded/extracted files to your 
                     </goals>
                     <configuration>
                         <file>${basedir}/target/misc/fs-api.jar</file>
-                        <repositoryId>archiva.internal</repositoryId>
+                        <repositoryId>${your.repo.id}</repositoryId>
                         <url>${your.repo.url}</url>
                         <artifactId>fs-api</artifactId>
                         <groupId>de.espirit.firstspirit</groupId>
-                        <version>${fs.version.new}</version>
+                        <version>${fs.version}</version>
                         <packaging>jar</packaging>
                     </configuration>
                 </execution>
@@ -140,11 +140,11 @@ As mentioned above, you could now deploy the downloaded/extracted files to your 
                     </goals>
                     <configuration>
                         <file>${basedir}/target/misc/fs-webrt.jar</file>
-                        <repositoryId>archiva.internal</repositoryId>
+                        <repositoryId>${your.repo.id}</repositoryId>
                         <url>${your.repo.url}</url>
                         <artifactId>fs-webrt</artifactId>
                         <groupId>de.espirit.firstspirit</groupId>
-                        <version>${fs.version.new}</version>
+                        <version>${fs.version}</version>
                         <packaging>jar</packaging>
                     </configuration>
                 </execution>
@@ -155,11 +155,11 @@ As mentioned above, you could now deploy the downloaded/extracted files to your 
                     </goals>
                     <configuration>
                         <file>${basedir}/target/misc/fs-isolated-webrt.jar</file>
-                        <repositoryId>archiva.internal</repositoryId>
+                        <repositoryId>${your.repo.id}</repositoryId>
                         <url>${your.repo.url}</url>
                         <artifactId>fs-isolated-webrt</artifactId>
                         <groupId>de.espirit.firstspirit</groupId>
-                        <version>${fs.version.new}</version>
+                        <version>${fs.version}</version>
                         <packaging>jar</packaging>
                     </configuration>
                 </execution>
@@ -170,11 +170,11 @@ As mentioned above, you could now deploy the downloaded/extracted files to your 
                     </goals>
                     <configuration>
                         <file>${basedir}/target/misc/fs-isolated-runtime.jar</file>
-                        <repositoryId>archiva.internal</repositoryId>
+                        <repositoryId>${your.repo.id}</repositoryId>
                         <url>${your.repo.url}</url>
                         <artifactId>fs-isolated-runtime</artifactId>
                         <groupId>de.espirit.firstspirit</groupId>
-                        <version>${fs.version.new}</version>
+                        <version>${fs.version}</version>
                         <packaging>jar</packaging>
                     </configuration>
                 </execution>
@@ -185,11 +185,11 @@ As mentioned above, you could now deploy the downloaded/extracted files to your 
                     </goals>
                     <configuration>
                         <file>${basedir}/target/modules/lib/fs-integration-rt.jar</file>
-                        <repositoryId>archiva.internal</repositoryId>
+                        <repositoryId>${your.repo.id}</repositoryId>
                         <url>${your.repo.url}</url>
                         <artifactId>fs-integration</artifactId>
                         <groupId>de.espirit.firstspirit</groupId>
-                        <version>${fs.version.new}</version>
+                        <version>${fs.version}</version>
                         <packaging>jar</packaging>
                     </configuration>
                 </execution>
@@ -200,11 +200,11 @@ As mentioned above, you could now deploy the downloaded/extracted files to your 
                     </goals>
                     <configuration>
                         <file>${basedir}/target/modules/lib/personalisation.jar</file>
-                        <repositoryId>archiva.internal</repositoryId>
+                        <repositoryId>${your.repo.id}</repositoryId>
                         <url>${your.repo.url}</url>
                         <artifactId>personalisation</artifactId>
                         <groupId>de.espirit.firstspirit</groupId>
-                        <version>${fs.version.new}</version>
+                        <version>${fs.version}</version>
                         <packaging>jar</packaging>
                     </configuration>
                 </execution>
