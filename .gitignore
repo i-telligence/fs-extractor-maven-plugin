@@ -4,3 +4,4 @@
 /.project
 .DS_Store
 /settings.xml
+/perform_release.sh
