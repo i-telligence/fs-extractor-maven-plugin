@@ -7,7 +7,6 @@
     <version>0.0.2-SNAPSHOT</version>
     <name>FirstSpirit Library Extractor Maven Plugin</name>
     
-
     <properties>
     
         <maven.version>3.5.2</maven.version>
