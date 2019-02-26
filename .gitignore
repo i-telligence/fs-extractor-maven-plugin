@@ -5,6 +5,7 @@
 .DS_Store
 /settings.xml
 /perform_release.sh
+/perform_release_no_batch.sh
 /src/test/resources/unit/fs-extract-mojo/pom.xml
 /.git.bfg-report
 /.git.bfg-report/

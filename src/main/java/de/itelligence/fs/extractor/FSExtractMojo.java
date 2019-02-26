@@ -5,18 +5,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-<<<<<<< HEAD
-<<<<<<< HEAD
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
-=======
->>>>>>> 1e86382993aa12fbd18fa277cc0d006ad9bf89a2
-=======
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
->>>>>>> 92b78372a752f9985baf66655c73ea23b3bcc058
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -97,13 +85,6 @@ public class FSExtractMojo extends AbstractMojo {
 
             file.getParentFile().mkdirs();
             
-<<<<<<< HEAD
-<<<<<<< HEAD
-            // Better than writing single byte at a time
-            Files.copy(is, Paths.get(filePath), StandardCopyOption.REPLACE_EXISTING);
-
-            is.close();
-=======
             FileOutputStream fos = new FileOutputStream(new File(filePath));
 
             int inByte;
@@ -113,13 +94,6 @@ public class FSExtractMojo extends AbstractMojo {
 
             is.close();
             fos.close();
->>>>>>> 1e86382993aa12fbd18fa277cc0d006ad9bf89a2
-=======
-            // Better than writing single byte at a time
-            Files.copy(is, Paths.get(filePath), StandardCopyOption.REPLACE_EXISTING);
-
-            is.close();
->>>>>>> 92b78372a752f9985baf66655c73ea23b3bcc058
 
             getLog().info("Successfully downloaded: " + path);
             
