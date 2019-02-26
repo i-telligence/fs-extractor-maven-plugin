@@ -4,7 +4,11 @@
     <groupId>de.itelligence.fs</groupId>
     <artifactId>fs-extractor-maven-plugin</artifactId>
     <packaging>maven-plugin</packaging>
+<<<<<<< HEAD
     <version>0.0.2-SNAPSHOT</version>
+=======
+    <version>0.0.1</version>
+>>>>>>> 1e86382993aa12fbd18fa277cc0d006ad9bf89a2
     <name>FirstSpirit Library Extractor Maven Plugin</name>
     
 
@@ -90,6 +94,7 @@
             <scope>test</scope>
         </dependency>
         
+<<<<<<< HEAD
         <dependency>
 	      <groupId>org.apache.maven.plugin-testing</groupId>
 	      <artifactId>maven-plugin-testing-harness</artifactId>
@@ -106,6 +111,8 @@
 		</dependency>
         -->
         
+=======
+>>>>>>> 1e86382993aa12fbd18fa277cc0d006ad9bf89a2
     </dependencies>
     
     <build>

@@ -52,7 +52,11 @@ The configuration below is an example only.
     </properties>
 
     <build>
+<<<<<<< HEAD
     <plugins>
+=======
+    
+>>>>>>> 1e86382993aa12fbd18fa277cc0d006ad9bf89a2
         <plugin>
             <groupId>de.itelligence.fs</groupId>
             <artifactId>fs-extractor-maven-plugin</artifactId>
@@ -64,7 +68,11 @@ The configuration below is an example only.
                 <version>${fs.version}</version>
             </configuration>
         </plugin>
+<<<<<<< HEAD
     </plugins>
+=======
+    
+>>>>>>> 1e86382993aa12fbd18fa277cc0d006ad9bf89a2
     </build>
 
 </project>
@@ -82,7 +90,11 @@ As mentioned above, you could now deploy the downloaded/extracted files to your 
 ```xml
 ...
     <build>
+<<<<<<< HEAD
         <plugins>
+=======
+    
+>>>>>>> 1e86382993aa12fbd18fa277cc0d006ad9bf89a2
         <plugin>
             <groupId>de.itelligence.fs</groupId>
             <artifactId>fs-extractor-maven-plugin</artifactId>
@@ -102,12 +114,19 @@ As mentioned above, you could now deploy the downloaded/extracted files to your 
             <executions>
                 <execution>
                     <id>deploy-fs-client</id>
+<<<<<<< HEAD
                     <phase>deploy</phase>
+=======
+>>>>>>> 1e86382993aa12fbd18fa277cc0d006ad9bf89a2
                     <goals>
                         <goal>deploy-file</goal>
                     </goals>
                     <configuration>
+<<<<<<< HEAD
                         <file>${project.build.directory}/debug/fs-client.jar</file>
+=======
+                        <file>${basedir}/target/debug/fs-client.jar</file>
+>>>>>>> 1e86382993aa12fbd18fa277cc0d006ad9bf89a2
                         <repositoryId>${your.repo.id}</repositoryId>
                         <url>${your.repo.url}</url>
                         <artifactId>client</artifactId>
@@ -118,13 +137,20 @@ As mentioned above, you could now deploy the downloaded/extracted files to your 
                 </execution>
                 <execution>
                     <id>deploy-fs-access</id>
+<<<<<<< HEAD
                     <phase>deploy</phase>
+=======
+>>>>>>> 1e86382993aa12fbd18fa277cc0d006ad9bf89a2
                     <goals>
                         <goal>deploy-file</goal>
                     </goals>
                     <configuration>
+<<<<<<< HEAD
                         <file>${project.build.directory}/misc/fs-access.jar</file>
                         <javadoc>${project.build.directory}/misc/fs-access-javadoc.jar</javadoc>
+=======
+                        <file>${basedir}/target/misc/fs-access.jar</file>
+>>>>>>> 1e86382993aa12fbd18fa277cc0d006ad9bf89a2
                         <repositoryId>${your.repo.id}</repositoryId>
                         <url>${your.repo.url}</url>
                         <artifactId>fs-access</artifactId>
@@ -135,12 +161,19 @@ As mentioned above, you could now deploy the downloaded/extracted files to your 
                 </execution>
                 <execution>
                     <id>deploy-fs-api</id>
+<<<<<<< HEAD
                     <phase>deploy</phase>
+=======
+>>>>>>> 1e86382993aa12fbd18fa277cc0d006ad9bf89a2
                     <goals>
                         <goal>deploy-file</goal>
                     </goals>
                     <configuration>
+<<<<<<< HEAD
                         <file>${project.build.directory}/misc/fs-api.jar</file>
+=======
+                        <file>${basedir}/target/misc/fs-api.jar</file>
+>>>>>>> 1e86382993aa12fbd18fa277cc0d006ad9bf89a2
                         <repositoryId>${your.repo.id}</repositoryId>
                         <url>${your.repo.url}</url>
                         <artifactId>fs-api</artifactId>
@@ -151,12 +184,19 @@ As mentioned above, you could now deploy the downloaded/extracted files to your 
                 </execution>
                 <execution>
                     <id>deploy-fs-webrt</id>
+<<<<<<< HEAD
                     <phase>deploy</phase>
+=======
+>>>>>>> 1e86382993aa12fbd18fa277cc0d006ad9bf89a2
                     <goals>
                         <goal>deploy-file</goal>
                     </goals>
                     <configuration>
+<<<<<<< HEAD
                         <file>${project.build.directory}/misc/fs-webrt.jar</file>
+=======
+                        <file>${basedir}/target/misc/fs-webrt.jar</file>
+>>>>>>> 1e86382993aa12fbd18fa277cc0d006ad9bf89a2
                         <repositoryId>${your.repo.id}</repositoryId>
                         <url>${your.repo.url}</url>
                         <artifactId>fs-webrt</artifactId>
@@ -167,12 +207,19 @@ As mentioned above, you could now deploy the downloaded/extracted files to your 
                 </execution>
                 <execution>
                     <id>deploy-fs-isolated-webrt</id>
+<<<<<<< HEAD
                     <phase>deploy</phase>
+=======
+>>>>>>> 1e86382993aa12fbd18fa277cc0d006ad9bf89a2
                     <goals>
                         <goal>deploy-file</goal>
                     </goals>
                     <configuration>
+<<<<<<< HEAD
                         <file>${project.build.directory}/misc/fs-isolated-webrt.jar</file>
+=======
+                        <file>${basedir}/target/misc/fs-isolated-webrt.jar</file>
+>>>>>>> 1e86382993aa12fbd18fa277cc0d006ad9bf89a2
                         <repositoryId>${your.repo.id}</repositoryId>
                         <url>${your.repo.url}</url>
                         <artifactId>fs-isolated-webrt</artifactId>
@@ -183,12 +230,19 @@ As mentioned above, you could now deploy the downloaded/extracted files to your 
                 </execution>
                 <execution>
                     <id>deploy-fs-isolated-runtime</id>
+<<<<<<< HEAD
                     <phase>deploy</phase>
+=======
+>>>>>>> 1e86382993aa12fbd18fa277cc0d006ad9bf89a2
                     <goals>
                         <goal>deploy-file</goal>
                     </goals>
                     <configuration>
+<<<<<<< HEAD
                         <file>${project.build.directory}/misc/fs-isolated-runtime.jar</file>
+=======
+                        <file>${basedir}/target/misc/fs-isolated-runtime.jar</file>
+>>>>>>> 1e86382993aa12fbd18fa277cc0d006ad9bf89a2
                         <repositoryId>${your.repo.id}</repositoryId>
                         <url>${your.repo.url}</url>
                         <artifactId>fs-isolated-runtime</artifactId>
@@ -199,12 +253,19 @@ As mentioned above, you could now deploy the downloaded/extracted files to your 
                 </execution>
                 <execution>
                     <id>deploy-fs-integration</id>
+<<<<<<< HEAD
                     <phase>deploy</phase>
+=======
+>>>>>>> 1e86382993aa12fbd18fa277cc0d006ad9bf89a2
                     <goals>
                         <goal>deploy-file</goal>
                     </goals>
                     <configuration>
+<<<<<<< HEAD
                         <file>${project.build.directory}/modules/lib/fs-integration-rt.jar</file>
+=======
+                        <file>${basedir}/target/modules/lib/fs-integration-rt.jar</file>
+>>>>>>> 1e86382993aa12fbd18fa277cc0d006ad9bf89a2
                         <repositoryId>${your.repo.id}</repositoryId>
                         <url>${your.repo.url}</url>
                         <artifactId>fs-integration</artifactId>
@@ -215,12 +276,19 @@ As mentioned above, you could now deploy the downloaded/extracted files to your 
                 </execution>
                 <execution>
                     <id>deploy-personalisation</id>
+<<<<<<< HEAD
                     <phase>deploy</phase>
+=======
+>>>>>>> 1e86382993aa12fbd18fa277cc0d006ad9bf89a2
                     <goals>
                         <goal>deploy-file</goal>
                     </goals>
                     <configuration>
+<<<<<<< HEAD
                         <file>${project.build.directory}/modules/lib/personalisation.jar</file>
+=======
+                        <file>${basedir}/target/modules/lib/personalisation.jar</file>
+>>>>>>> 1e86382993aa12fbd18fa277cc0d006ad9bf89a2
                         <repositoryId>${your.repo.id}</repositoryId>
                         <url>${your.repo.url}</url>
                         <artifactId>personalisation</artifactId>
@@ -231,7 +299,11 @@ As mentioned above, you could now deploy the downloaded/extracted files to your 
                 </execution>
             </executions>
         </plugin>
+<<<<<<< HEAD
     </plugins>
+=======
+    
+>>>>>>> 1e86382993aa12fbd18fa277cc0d006ad9bf89a2
     </build>
 
 </project>

@@ -5,9 +5,12 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+<<<<<<< HEAD
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+=======
+>>>>>>> 1e86382993aa12fbd18fa277cc0d006ad9bf89a2
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -88,10 +91,22 @@ public class FSExtractMojo extends AbstractMojo {
 
             file.getParentFile().mkdirs();
             
+<<<<<<< HEAD
             // Better than writing single byte at a time
             Files.copy(is, Paths.get(filePath), StandardCopyOption.REPLACE_EXISTING);
 
             is.close();
+=======
+            FileOutputStream fos = new FileOutputStream(new File(filePath));
+
+            int inByte;
+            while ((inByte = is.read()) != -1) {
+                fos.write(inByte);
+            }
+
+            is.close();
+            fos.close();
+>>>>>>> 1e86382993aa12fbd18fa277cc0d006ad9bf89a2
 
             getLog().info("Successfully downloaded: " + path);
             
