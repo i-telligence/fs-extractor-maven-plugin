@@ -4,7 +4,7 @@
     <groupId>de.itelligence.agv.fs.test</groupId>
     <artifactId>fs-extractor-plugin-test</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>fs-extract-plugin Maven Mojo</name>
 
     <dependencies>
@@ -18,14 +18,11 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>de.itelligence.agv.fs</groupId>
-                <artifactId>fs-extractor-plugin</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <groupId>de.itelligence.fs</groupId>
+                <artifactId>fs-extractor-maven-plugin</artifactId>
+                <version>0.0.2-SNAPSHOT</version>
                 <configuration>
                     <project implementation="de.itelligence.agv.fs.extractor.stubs.FSExtractProjectStub"/>
-                    <user>itelligence</user>
-                    <password>teFS52itelligence</password>
-                    <version>5.2.2109</version>
                 </configuration>
             </plugin>
         </plugins>
