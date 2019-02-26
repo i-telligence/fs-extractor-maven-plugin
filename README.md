@@ -56,7 +56,7 @@ The configuration below is an example only.
         <plugin>
             <groupId>de.itelligence.fs</groupId>
             <artifactId>fs-extractor-maven-plugin</artifactId>
-            <version>0.0.1</version>
+            <version>0.0.2</version>
             <configuration>
                 <project>${project}</project>
                 <user>${espirit.user}</user>
@@ -86,7 +86,7 @@ As mentioned above, you could now deploy the downloaded/extracted files to your 
         <plugin>
             <groupId>de.itelligence.fs</groupId>
             <artifactId>fs-extractor-maven-plugin</artifactId>
-            <version>0.0.1</version>
+            <version>0.0.2</version>
             <configuration>
                 <project>${project}</project>
                 <user>${espirit.user}</user>
