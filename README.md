@@ -19,7 +19,7 @@ This is a simple Maven plugin for downloading extracting the following libraries
 * fs-client.jar (optional from 2022.3 onwards)
 * fs-access.jar (optional from 2022.3 onwards)
 * fs-api.jar
-* fs-webrt.jar
+* fs-webrt.jar (optional from 2022.3 onwards)
 * fs-isolated-webrt.jar
 * fs-isolated-runtime.jar
 * personalisation.jar
