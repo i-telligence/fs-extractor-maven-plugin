@@ -14,10 +14,10 @@
         <maven-compat.version>3.2.1</maven-compat.version>
         <maven-plugin-testing-harness.version>3.1.0</maven-plugin-testing-harness.version>
         
-        <httpcore.version>4.4.6</httpcore.version>
-        <httpclient.version>4.5.3</httpclient.version>
+        <httpcore.version>4.4.15</httpcore.version>
+        <httpclient.version>4.5.13</httpclient.version>
         
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.2</junit.version>
         
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         

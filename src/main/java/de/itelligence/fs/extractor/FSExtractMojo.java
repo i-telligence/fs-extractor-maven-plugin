@@ -53,11 +53,12 @@ public class FSExtractMojo extends AbstractMojo {
     
     /**
      * Download file represented by specific path.
-     * @param CloseableHttpClient client
-     * @param String path
-     * @throws MojoFailureException if file could not be downloaded
+     * @param client
+     * @param path
+     * @param optional
+     * @throws MojoFailureException if file could not be downloaded and is not optional
      */
-    private void downloadFile(CloseableHttpClient client, String path) throws MojoFailureException{
+    private void downloadFile(CloseableHttpClient client, String path, boolean optional) throws MojoFailureException{
         
         String filePath = project.getBasedir() + File.separator + "target"+path;
 
@@ -99,10 +100,22 @@ public class FSExtractMojo extends AbstractMojo {
             
         } catch (Exception e) {
             
-            throw new MojoFailureException("Couldn't download: " + path, e);
+            if ( ! optional ) {
+                throw new MojoFailureException("Couldn't download: " + path, e);
+            }
             
         }
         
+    }
+    
+    /**
+     * 
+     * @param CloseableHttpClient client
+     * @param String path
+     * @throws MojoFailureException if file could not be downloaded
+     */
+    private void downloadFile(CloseableHttpClient client, String path) throws MojoFailureException{
+        downloadFile(client, path, false);
     }
     
     /**
@@ -159,7 +172,7 @@ public class FSExtractMojo extends AbstractMojo {
 
         try {
             
-            downloadFile(client, "/debug/fs-client.jar");
+            downloadFile(client, "/debug/fs-client.jar", true);
             downloadFile(client, "/misc/fs-access.jar");
             downloadFile(client, "/misc/fs-api.jar");
             downloadFile(client, "/misc/fs-webrt.jar");
