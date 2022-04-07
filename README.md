@@ -17,7 +17,7 @@ There are probably bugs.
 This is a simple Maven plugin for downloading extracting the following libraries for a specific version:
 
 * fs-client.jar (optional from 2022.3 onwards)
-* fs-access.jar
+* fs-access.jar (optional from 2022.3 onwards)
 * fs-api.jar
 * fs-webrt.jar
 * fs-isolated-webrt.jar

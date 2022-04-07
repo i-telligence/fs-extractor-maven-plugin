@@ -173,7 +173,7 @@ public class FSExtractMojo extends AbstractMojo {
         try {
             
             downloadFile(client, "/debug/fs-client.jar", true);
-            downloadFile(client, "/misc/fs-access.jar");
+            downloadFile(client, "/misc/fs-access.jar", true);
             downloadFile(client, "/misc/fs-api.jar");
             downloadFile(client, "/misc/fs-webrt.jar");
             downloadFile(client, "/misc/fs-isolated-webrt.jar");
