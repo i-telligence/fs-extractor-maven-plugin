@@ -16,10 +16,10 @@ There are probably bugs.
 
 This is a simple Maven plugin for downloading extracting the following libraries for a specific version:
 
-* fs-client.jar
-* fs-access.jar
+* fs-client.jar (optional from 2022.3 onwards)
+* fs-access.jar (optional from 2022.3 onwards)
 * fs-api.jar
-* fs-webrt.jar
+* fs-webrt.jar (optional from 2022.3 onwards)
 * fs-isolated-webrt.jar
 * fs-isolated-runtime.jar
 * personalisation.jar
@@ -47,7 +47,7 @@ The configuration below is an example only.
     
         <espirit.user>E-Spirit-Username</espirit.user>
         <espirit.password>E-Spirit-Password</espirit.password>
-        <fs.version>2019-02</fs.version>
+        <fs.version>2022.3</fs.version>
         
     </properties>
 
@@ -56,7 +56,7 @@ The configuration below is an example only.
         <plugin>
             <groupId>de.itelligence.fs</groupId>
             <artifactId>fs-extractor-maven-plugin</artifactId>
-            <version>0.0.2</version>
+            <version>0.0.3</version>
             <configuration>
                 <project>${project}</project>
                 <user>${espirit.user}</user>
@@ -86,7 +86,7 @@ As mentioned above, you could now deploy the downloaded/extracted files to your 
         <plugin>
             <groupId>de.itelligence.fs</groupId>
             <artifactId>fs-extractor-maven-plugin</artifactId>
-            <version>0.0.2</version>
+            <version>0.0.3</version>
             <configuration>
                 <project>${project}</project>
                 <user>${espirit.user}</user>
