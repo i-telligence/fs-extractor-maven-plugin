@@ -8,18 +8,24 @@ import java.io.InputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.CredentialsProvider;
+import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.impl.client.LaxRedirectStrategy;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
+import org.apache.maven.plugin.logging.Log;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
@@ -62,40 +68,22 @@ public class FSExtractMojo extends AbstractMojo {
         
         String filePath = project.getBasedir() + File.separator + "target"+path;
 
-        File file = new File(filePath);
+        File destinationFile = new File(filePath);
         
-        if ( file.exists() ) return;
+        if ( destinationFile.exists() ) return;
+        
+        destinationFile.getParentFile().mkdirs();
         
         HttpGet request = new HttpGet(baseUrl+"/"+version+path);
 
-        HttpResponse response;
+        getLog().info("Request url: " + request.getURI());
+        
         try {
             
-            response = client.execute(request);
+            FileDownloadResponseHandler responseHandler = new FileDownloadResponseHandler(destinationFile, getLog());
             
-            HttpEntity entity = response.getEntity();
-
-            int statusCode = response.getStatusLine().getStatusCode();
-
-            getLog().info("Request url: " + request.getURI());
-            getLog().info("Status code: " + statusCode);
+            File downloaded = client.execute(request, responseHandler);
             
-            if ( statusCode != 200 ) throw new Exception("Invalid status code, expected 200 but got " + statusCode);
-
-            InputStream is = entity.getContent();
-
-            file.getParentFile().mkdirs();
-            
-            FileOutputStream fos = new FileOutputStream(new File(filePath));
-
-            int inByte;
-            while ((inByte = is.read()) != -1) {
-                fos.write(inByte);
-            }
-
-            is.close();
-            fos.close();
-
             getLog().info("Successfully downloaded: " + path);
             
         } catch (Exception e) {
@@ -166,16 +154,23 @@ public class FSExtractMojo extends AbstractMojo {
         UsernamePasswordCredentials credentials = new UsernamePasswordCredentials(user, password);
         provider.setCredentials(AuthScope.ANY, credentials);
           
+        CloseableHttpClient client = HttpClients.custom()
+                .setRedirectStrategy(new LaxRedirectStrategy()) // adds HTTP REDIRECT support to GET and POST methods
+                .setDefaultCredentialsProvider(provider)
+                .build();
+        
+        /**
         CloseableHttpClient client = HttpClientBuilder.create()
           .setDefaultCredentialsProvider(provider)
           .build();
-
+        */
+        
         try {
             
             downloadFile(client, "/debug/fs-client.jar", true);
             downloadFile(client, "/misc/fs-access.jar", true);
             downloadFile(client, "/misc/fs-api.jar");
-            downloadFile(client, "/misc/fs-webrt.jar");
+            downloadFile(client, "/misc/fs-webrt.jar", true);
             downloadFile(client, "/misc/fs-isolated-webrt.jar");
             downloadFile(client, "/misc/fs-isolated-runtime.jar");
             
@@ -193,6 +188,44 @@ public class FSExtractMojo extends AbstractMojo {
             getLog().error(e);
         }
 
+    }
+    
+    static class FileDownloadResponseHandler implements ResponseHandler<File> {
+
+        private final File target;
+
+        private final Log log;
+        
+        private HttpResponse response;
+        
+        public FileDownloadResponseHandler(File target, Log log) {
+            this.target = target;
+            this.log    = log;
+        }
+
+        public HttpResponse getResponse() {
+            return this.response;
+        }
+        
+        @Override
+        public File handleResponse(HttpResponse response) throws ClientProtocolException, IOException {
+            
+            int statusCode = response.getStatusLine().getStatusCode();
+
+            
+            log.info("Status code: " + statusCode);
+            
+            if ( statusCode != 200 ) throw new IOException("Invalid status code, expected 200 but got " + statusCode);
+            
+            InputStream source = response.getEntity().getContent();
+            FileUtils.copyInputStreamToFile(source, this.target);
+            
+            this.response   = response;
+            
+            return this.target;
+            
+        }
+        
     }
 
 }
